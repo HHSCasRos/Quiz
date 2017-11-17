@@ -19,8 +19,6 @@ namespace Quiz
             var sortedQuiz = quiz.OrderBy(q => q.Difficulty);
             List<Question> easyQuiz = quiz.Where( q => q.Difficulty == 1 ).ToList();
             
-
-
             Console.ReadKey();
         }
 
