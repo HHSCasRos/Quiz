@@ -12,12 +12,12 @@ namespace Quiz
 
         internal void display()
         {
-            throw new NotImplementedException();
+            Console.WriteLine(this.text);
         }
 
         internal bool checkAnswer(string response)
         {
-            throw new NotImplementedException();
+            return this.answer == response;
         }
     }
 }

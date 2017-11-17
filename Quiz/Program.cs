@@ -6,25 +6,21 @@ namespace Quiz
     {
         static void Main(string[] args)
         {
-            Question first = new Question();
-            first.setText("Who was the inventor of Java?");
-            first.setAnswer("James Gosling");
+            Question first = new Question()
+            {
+                Text = "Who was the inventor of Java?",
+                Answer = "James Gosling"
+            };
 
             presentQuestion(first);
 
-
-
-            
-
-            
-
-            Console.WriteLine("Hello World!");
+            Console.ReadKey();
         }
 
         public static void presentQuestion(Question q)
         {
             q.display();
-            Console.WriteLine("Your awnser: ");
+            Console.Write("Your awnser: ");
             string response = Console.ReadLine();
             Console.WriteLine(q.checkAnswer(response));
         }
