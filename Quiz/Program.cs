@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Quiz
 {
@@ -6,13 +8,18 @@ namespace Quiz
     {
         static void Main(string[] args)
         {
-            Question first = new Question()
+            List<Question> quiz = new List<Question>()
             {
-                Text = "Who was the inventor of Java?",
-                Answer = "James Gosling"
+                new Question(){Text = "Who was the inventor of Java?", Answer = "James Gosling", Difficulty = 3, Category = "Java"},
+                new Question(){Text = "What is 18 / 3?", Answer = "6", Difficulty = 1, Category = "Math"},
+                new Question(){Text = "What is Java", Answer = "A programming language", Difficulty = 1, Category = "Java"},
+                new Question(){Text = "What is LOIC?", Answer = "It's a infamous hacking tool", Difficulty = 2, Category = "Hacking"}
             };
 
-            presentQuestion(first);
+            var sortedQuiz = quiz.OrderBy(q => q.Difficulty);
+            List<Question> easyQuiz = quiz.Where( q => q.Difficulty == 1 ).ToList();
+            
+
 
             Console.ReadKey();
         }
