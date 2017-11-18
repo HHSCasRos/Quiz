@@ -9,17 +9,17 @@ namespace Quiz
         private int difficulty;
         private string category;
 
-        public string Answer { set => answer = value; }
-        public string Text { set => text = value; }
+        public string Answer { get => answer; set => answer = value; }
+        public string Text { get => text; set => text = value; }
         public int Difficulty { get => difficulty;  set => difficulty = value; }
         public string Category { set => category = value; }
 
-        internal void display()
+        internal void Display()
         {
             Console.WriteLine(this.text);
         }
 
-        internal bool checkAnswer(string response)
+        internal bool CheckAnswer(string response)
         {
             return this.answer == response;
         }

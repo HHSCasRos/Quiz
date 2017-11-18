@@ -35,10 +35,10 @@ namespace Quiz
 
         public static void presentQuestion(Question q)
         {
-            q.display();
+            q.Display();
             Console.Write("Your awnser: ");
             string response = Console.ReadLine();
-            Console.WriteLine(q.checkAnswer(response));
+            Console.WriteLine(q.CheckAnswer(response));
         }
     }
 }
