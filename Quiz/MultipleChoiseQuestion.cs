@@ -10,18 +10,25 @@ namespace Quiz
 
         public List<string> Options { get => options; set => options = value; }
 
-        internal new void Display()
+        internal override void Display()
         {
             Console.WriteLine(this.Text);
-            for (int i = 1; i <= options.Count; i++)
+            foreach(string o in options)
             {
-                Console.WriteLine(i + ": " + options[i - 1]);
+                Console.WriteLine(o);
             }
         }
         
-        internal new bool CheckAnswer(string response)
+        internal override bool CheckAnswer(string response)
         {
-            return this.Answer == response;
+            foreach (string o in options)
+            {
+                if (response.Substring(0, 1) == o.Substring(0, 1))
+                {
+                    return o.Substring(0, 1) == this.Answer;
+                }
+            }
+            return false;
         }
     }
 }

@@ -14,12 +14,12 @@ namespace Quiz
         public int Difficulty { get => difficulty;  set => difficulty = value; }
         public string Category { set => category = value; }
 
-        internal void Display()
+        internal virtual void Display()
         {
             Console.WriteLine(this.text);
         }
 
-        internal bool CheckAnswer(string response)
+        internal virtual bool CheckAnswer(string response)
         {
             return this.answer == response;
         }
