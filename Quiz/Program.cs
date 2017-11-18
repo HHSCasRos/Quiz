@@ -17,8 +17,19 @@ namespace Quiz
             };
 
             var sortedQuiz = quiz.OrderBy(q => q.Difficulty);
+
+            foreach (Question q in sortedQuiz)
+            {
+                presentQuestion(q);
+            }
+
             List<Question> easyQuiz = quiz.Where( q => q.Difficulty == 1 ).ToList();
-            
+
+            foreach (Question q in easyQuiz)
+            {
+                presentQuestion(q);
+            }
+
             Console.ReadKey();
         }
 
